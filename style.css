@@ -5,8 +5,17 @@ html {
     padding: 0;
     height: 100%;
     /* The Font Family- Really important!! */
-    font-family: Arial, sans-serif;
+    
     box-sizing: border-box;
+    
+.merriweather-<uniquifier> {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
 }
 
 /* reset for images to ensure they ar 100% of the parent container width */
@@ -36,7 +45,7 @@ img {
 
 /* nice big font on a banner style background */
 .topic-title{
-    color: white;
+    color: rgb(233, 182, 42);
     font-size: 2em;
     padding: 0.1em 3em;
     background-color: rgb(139, 15, 15);
@@ -55,8 +64,8 @@ img {
 
 /* Styling for the individual topic cards rounded edges background color and a drop shadow */
 .topic-card{
-    background-color: rgb(71, 71, 71);
-    color: white;
+    background-color: rgb(139, 15, 15);
+    color: rgb(233, 182, 42);
     padding: 1em;
     border-radius: 0.5em;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
@@ -74,7 +83,7 @@ img {
 /* Styling for a footer section to take a bit of spcae at the bottom of the page */
 .footer{
     background-color: rgb(139, 15, 15);
-    color: rgb(255, 255, 255);
+    color: rgb(233, 182, 42);
     text-align: center;
     padding: 3em 3em;
 }
