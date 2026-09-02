@@ -1,90 +1,151 @@
-/* A simple css reset */
-body,
 html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    /* The Font Family- Really important!! */
-    
-    box-sizing: border-box;
-    
-.merriweather- {
-  font-family: "Merriweather", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-  text-align: center;
-}
+    font-family: "Merriweather", serif;
+    background-color: #962222;
+    color: #ffffff;
 }
 
-/* reset for images to ensure they ar 100% of the parent container width */
+/* Navigation Bar */
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: rgb(139, 15, 15);
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid rgb(233, 182, 42);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.4em;
+    color: rgb(233, 182, 42);
+}
+
+.navbar nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: rgb(233, 182, 42);
+}
+
+/* Image Reset */
 img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.3em;
+    display: block;
 }
 
-/* The hero section styling- use your OWN Hero Image URL here */
+/* Hero Section */
 .hero {
     background-image: url('images/websiteheader.png');
-    height: 25vh;
+    height: 35vh;
     background-size: cover;
     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
     position: relative;
 }
 
-/* BIG text styling for the hero section text */
-.hero-text {
-    font-size: 4em;
+/* Section Spacing */
+.topic {
+    padding-top: 2.5rem;
+}
+
+/* Centered Gold Topic Title Bar */
+.topic-bar {
+    text-align: center;
+    margin: 0 auto 1.5rem auto;
+    padding: 0.5rem 1rem;
+}
+
+.topic-bar h2 {
+    margin: 0;
+    color: rgb(233, 182, 42); /* Changed to Gold for clear visual separation */
+    font-size: 2.2em;
     font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
-/* nice big font on a banner style background */
-.topic-title{
-    color: rgb(233, 182, 42);
-    font-size: 2em;
-    padding: 0.1em 3em;
-    background-color: rgb(139, 15, 15);
-    text-align: center;
-}
-
-/* Three column grid with a nice big gap */
-.topic-content{
+/* Content Grid Layout */
+.topic-content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6em;
-    /* bring the whole section in off the sides of the page */
-    width: 70%;
-    /* top margin of 3em and center right/left */
-    margin: 3em auto;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2em;
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto 3em auto;
 }
 
-/* Styling for the individual topic cards rounded edges background color and a drop shadow */
-.topic-card{
+/* Topic Card Styling */
+.topic-card {
     background-color: rgb(139, 15, 15);
-    color: rgb(233, 182, 42);
     padding: 1em;
-    border-radius: 0.5em;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0.6em;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Styling for the topic card titles */
-.topic-card-text{
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
-    /* center align text */
+.topic-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.6);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.topic-card-text {
+    font-size: 1.15em;
+    color: rgb(233, 182, 42);
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
     text-align: center;
 }
 
-
-/* Styling for a footer section to take a bit of spcae at the bottom of the page */
-.footer{
+/* Footer */
+.footer {
     background-color: rgb(139, 15, 15);
     color: rgb(233, 182, 42);
     text-align: center;
-    padding: 3em 3em;
+    padding: 2.5em;
+    margin-top: 3em;
+    border-top: 2px solid rgb(233, 182, 42);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navbar nav {
+        margin-top: 0.8rem;
+    }
+
+    .topic-bar h2 {
+        font-size: 1.8em;
+    }
 }
